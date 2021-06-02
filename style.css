@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 /* font-family: 'Open Sans', sans-serif; */
-
+:root {
+    --shadow: rgba(0, 0, 0, 0.8)
+  }
 *{
     box-sizing: border-box;
     margin: 0%;
@@ -28,23 +30,26 @@ html, body{
 
 .slide{
     max-height: 100vh;
-    width:350px;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:1rem;
-    user-select: none;
+    padding: 1rem;
 }
-.slide img{
+@media(min-width: 1200px){
+    .slide {
+      padding: 3rem;
+    }
+}
+  .slide img{
     max-width: 100%;
-    max-height: 60%;
-}
-
-.slide h2{
-    font-size:2.5rem;
-    margin-bottom:0.5rem;
-}
+    max-height: 100%;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 5px 5px 50px -1px var(--shadow);
+    border-radius: 4px;
+    user-select: none;
+  }
 
 
 .slide h4{
@@ -56,6 +61,7 @@ html, body{
     color:#fff;
     text-decoration: none;
     padding:1rem 1.5rem;
+    margin-top: 30px;
 }
 
 .grabbing{
